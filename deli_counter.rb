@@ -5,8 +5,8 @@ def line(customer_list)
     puts "The line is currently empty."
   else
     to_print = "The line is currently:"
-    customer_list.each_with_index {|customer, counter|
-       to_print += " #{counter + 1}. #{customer}"
+    customer_list.each_with_index {|customer, index|
+       to_print += " #{index + 1}. #{customer}"
     }
     puts to_print
   end
