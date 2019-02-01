@@ -1,22 +1,20 @@
 
 
 def line(customer_list)
-  counter = 1
   if customer_list.empty? == true
     puts "The line is currently empty."
   else
     to_print = "The line is currently:"
-    customer_list.each do |customer|
-       to_print += " #{counter}. #{customer}"
-       counter += 1
-    end
-    puts to_print.chomp
+    customer_list.each_with_index {|customer, counter|
+       to_print += " #{counter + 1}. #{customer}"
+    }
+    puts to_print
   end
 end
 
-def take_a_number (customer_list, name)
+def take_a_number(customer_list, name)
   customer_list << name
-  place = customer_list.index(name)
+  place = customer_list.find_index(name)
   puts "Welcome, #{name}. You are number #{place + 1} in line."
 end
 
