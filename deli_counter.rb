@@ -1,14 +1,15 @@
-
+require 'pry'
 
 def line(customer_list)
   if customer_list.empty? == true
     puts "The line is currently empty."
   else
+    to_print_array = []
     to_print = "The line is currently:"
     customer_list.each_with_index {|customer, index|
-       to_print += " #{index + 1}. #{customer}"
+       to_print_array << "#{index + 1}. #{customer}"
     }
-    puts to_print
+    puts to_print + to_print_array.join(" ")
   end
 end
 
